@@ -212,7 +212,7 @@ function onLeave() {
     font-weight: 700;
     letter-spacing: -0.04em;
     color: rgba(255, 255, 255, 0.06);
-    line-height: 1;
+    line-height: 1.1;
     z-index: 1;
     pointer-events: none;
   }

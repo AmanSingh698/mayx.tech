@@ -94,9 +94,10 @@ onMounted(() => {
   trigger = ScrollTrigger.create({
     trigger: outerEl.value,
     pin: true,
-    start: 'top 15%',
+    start: 'top 120px',
     end: `+=${totalScroll}`,
     scrub: 1.2,
+    anticipatePin: 1,
     onUpdate(self) {
       gsap.set(innerEl.value, { x: -totalScroll * self.progress })
 
@@ -150,7 +151,7 @@ onUnmounted(() => {
     gap: 0;
     will-change: transform;
     align-items: stretch;
-    padding-inline: clamp(24px, 6vw, 80px);
+    padding-inline: calc((100% - min(1440px, 100% - 12vw)) / 2);
   }
 
   &__step {

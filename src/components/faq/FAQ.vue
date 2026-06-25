@@ -149,6 +149,7 @@ onMounted(() => {
     top: 120px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
 
     @media (max-width: $laptop) {

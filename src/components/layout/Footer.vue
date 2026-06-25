@@ -130,7 +130,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .footer {
   background: $background-light;
-  padding-top: clamp(80px, 12vw, 160px);
+  padding-top: clamp(40px, 6vw, 80px);
   padding-bottom: 0;
   position: relative;
   overflow: hidden;

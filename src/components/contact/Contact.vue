@@ -163,6 +163,7 @@ onMounted(() => {
   background: $background-light;
   overflow: hidden;
   position: relative;
+  padding-bottom: clamp(40px, 6vw, 80px);
 
   &__bg {
     position: absolute;

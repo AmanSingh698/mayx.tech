@@ -226,7 +226,7 @@ onUnmounted(() => {
 
   &__slide {
     position: absolute;
-    top: clamp(20px, 3vh, 40px);
+    top: clamp(90px, 12vh, 130px);
     bottom: clamp(20px, 3vh, 40px);
     left: clamp(24px, 6vw, 80px);
     right: clamp(24px, 6vw, 80px);
@@ -235,8 +235,8 @@ onUnmounted(() => {
 
   &__progress {
     position: absolute;
-    bottom: 32px;
-    right: 40px;
+    bottom: clamp(10px, 1.5vh, 20px);
+    right: clamp(24px, 6vw, 80px);
     display: flex;
     align-items: center;
     gap: 16px;

@@ -29,8 +29,9 @@ const originalPositions = []
 
 function initThree() {
   const el = canvas.value
-  const w = el.clientWidth
-  const h = el.clientHeight
+  if (!el) return
+  const w = window.innerWidth
+  const h = window.innerHeight
 
   // Scene
   scene = new THREE.Scene()
@@ -145,8 +146,8 @@ function updateParticles() {
 }
 
 function setupPostProcessing() {
-  const w = canvas.value.clientWidth
-  const h = canvas.value.clientHeight
+  const w = window.innerWidth
+  const h = window.innerHeight
 
   composer = new EffectComposer(renderer)
   composer.addPass(new RenderPass(scene, camera))
@@ -187,9 +188,8 @@ function onMouseMove(e) {
 }
 
 function onResize() {
-  const w = canvas.value?.clientWidth
-  const h = canvas.value?.clientHeight
-  if (!w || !h) return
+  const w = window.innerWidth
+  const h = window.innerHeight
 
   camera.aspect = w / h
   camera.updateProjectionMatrix()
