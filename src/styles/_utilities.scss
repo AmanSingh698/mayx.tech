@@ -1,0 +1,228 @@
+/* ==========================================================
+   MAYX UTILITIES
+   Container, glass, flex, grid, visibility helpers
+========================================================== */
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container {
+  width: min($container, 100% - ($container-padding * 2));
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(1600px, 100% - 4vw);
+  margin-inline: auto;
+}
+
+/* ===========================
+   SECTION SPACING
+=========================== */
+
+.section {
+  padding-block: clamp(80px, 12vw, 160px);
+}
+
+.section-header {
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+/* ===========================
+   FLEX
+=========================== */
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-4 { gap: $space-4; }
+.gap-6 { gap: $space-6; }
+.gap-8 { gap: $space-8; }
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 48px);
+
+  @media (max-width: $laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   GLASSMORPHISM
+=========================== */
+
+.glass {
+  background: $glass-bg;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid $glass-border;
+  box-shadow: 0 20px 60px $glass-shadow;
+}
+
+.glass-card {
+  @extend .glass;
+  border-radius: $radius-lg;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+/* ===========================
+   GRADIENT BACKGROUNDS
+=========================== */
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at top, rgba($primary, 0.15) 0%, transparent 60%);
+}
+
+.bg-gradient-bottom {
+  background: radial-gradient(ellipse at bottom, rgba($secondary, 0.12) 0%, transparent 60%);
+}
+
+/* ===========================
+   GLOW EFFECTS
+=========================== */
+
+.glow-primary { box-shadow: $shadow-blue; }
+.glow-purple { box-shadow: $shadow-purple; }
+
+.text-glow {
+  text-shadow: 0 0 40px rgba($primary, 0.5);
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $glass-border, transparent);
+}
+
+/* ===========================
+   OVERFLOW HIDDEN CLIP
+=========================== */
+
+.overflow-hidden { overflow: hidden; }
+
+/* ===========================
+   VISIBILITY
+=========================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===========================
+   BUTTONS BASE
+=========================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: $radius-round;
+  font-size: $text-sm;
+  font-weight: $semibold;
+  cursor: pointer;
+  transition: all $normal $ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+  font-family: $font-body;
+}
+
+.btn-primary {
+  @extend .btn;
+  background: white;
+  color: #050505;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $gradient-primary;
+    opacity: 0;
+    transition: opacity $normal $ease;
+  }
+
+  &:hover {
+    box-shadow: 0 0 40px rgba($primary, 0.4);
+    color: white;
+
+    &::after { opacity: 1; }
+  }
+
+  span { position: relative; z-index: 1; }
+}
+
+.btn-outline {
+  @extend .btn;
+  background: transparent;
+  color: white;
+  border: 1px solid $glass-border;
+
+  &:hover {
+    background: $glass-bg;
+    border-color: rgba(255,255,255,0.15);
+  }
+}
+
+/* ===========================
+   NOISE TEXTURE
+=========================== */
+
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.025;
+  border-radius: inherit;
+}
+
+/* ===========================
+   TEXT ALIGN
+=========================== */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* ===========================
+   SPACING UTILITIES
+=========================== */
+
+.mt-auto { margin-top: auto; }
+.mb-6 { margin-bottom: $space-6; }
+.mb-8 { margin-bottom: $space-8; }

@@ -1,0 +1,153 @@
+/* ==========================================================
+   MAYX DESIGN SYSTEM
+========================================================== */
+
+/* ===========================
+   COLORS
+=========================== */
+
+$background: #050505;
+$background-light: #0b0b0e;
+$surface: #111114;
+$surface-light: #17171c;
+
+$white: #ffffff;
+$text: #f4f4f5;
+$text-light: #d4d4d8;
+$text-muted: #8b8b95;
+
+$primary: #4f6ef7;
+$primary-light: #7a92ff;
+$secondary: #7c3aed;
+$accent: #00d4ff;
+
+$success: #22c55e;
+$warning: #f59e0b;
+$error: #ef4444;
+
+/* ===========================
+   GRADIENTS
+=========================== */
+
+$gradient-primary: linear-gradient(135deg, #4f6ef7 0%, #7c3aed 100%);
+
+$gradient-text: linear-gradient(90deg, #4f6ef7 0%, #00d4ff 50%, #7c3aed 100%);
+
+$gradient-border: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+
+/* ===========================
+   GLASS
+=========================== */
+
+$glass-bg: rgba(255, 255, 255, 0.04);
+$glass-border: rgba(255, 255, 255, 0.08);
+$glass-shadow: rgba(0, 0, 0, 0.35);
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+$container: 1440px;
+$container-padding: 6vw;
+
+/* ===========================
+   BORDER RADIUS
+=========================== */
+
+$radius-xs: 6px;
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-xl: 34px;
+$radius-round: 999px;
+
+/* ===========================
+   SPACING
+=========================== */
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 40px;
+$space-9: 56px;
+$space-10: 72px;
+$space-11: 96px;
+$space-12: 120px;
+$space-13: 160px;
+
+/* ===========================
+   FONT SIZES
+=========================== */
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-md: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 2rem;
+$text-4xl: 2.5rem;
+$text-5xl: 3.5rem;
+$text-6xl: 4.5rem;
+$text-7xl: 6rem;
+$text-8xl: 7rem;
+
+/* ===========================
+   FONT WEIGHTS
+=========================== */
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+/* ===========================
+   SHADOWS
+=========================== */
+
+$shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+$shadow-md: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+$shadow-lg: 0 35px 80px rgba(0, 0, 0, 0.4);
+
+$shadow-blue: 0 0 60px rgba(79, 110, 247, 0.35);
+
+$shadow-purple: 0 0 60px rgba(124, 58, 237, 0.3);
+
+/* ===========================
+   TRANSITIONS
+=========================== */
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+$fast: 0.25s;
+$normal: 0.45s;
+$slow: 0.8s;
+
+/* ===========================
+   Z INDEX
+=========================== */
+
+$z-background: -10;
+$z-content: 1;
+$z-header: 100;
+$z-dropdown: 200;
+$z-overlay: 500;
+$z-loader: 999;
+$z-cursor: 9999;
+
+/* ===========================
+   BREAKPOINTS
+=========================== */
+
+$mobile: 640px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+$wide: 1600px;

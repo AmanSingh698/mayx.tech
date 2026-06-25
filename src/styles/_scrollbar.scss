@@ -1,0 +1,65 @@
+/* ==========================================================
+   MAYX SCROLLBAR
+   Premium custom scrollbar
+========================================================== */
+
+/* ===========================
+   WEBKIT SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $primary, $secondary);
+  border-radius: $radius-round;
+  transition: all $normal $ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, $primary-light, $primary);
+  box-shadow: 0 0 10px rgba($primary, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: $background;
+}
+
+/* ===========================
+   FIREFOX
+=========================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary $background;
+}
+
+/* ===========================
+   LENIS SMOOTH SCROLL
+=========================== */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

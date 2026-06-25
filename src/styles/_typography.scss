@@ -1,0 +1,132 @@
+/* ==========================================================
+   MAYX TYPOGRAPHY
+   Space Grotesk + Inter, fluid clamp() sizing, gradient heading
+========================================================== */
+
+/* ===========================
+   GOOGLE FONTS
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   FONT FAMILIES
+=========================== */
+
+$font-display: 'Space Grotesk', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+body {
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text;
+}
+
+/* ===========================
+   HEADINGS
+=========================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: $bold;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+h1 { font-size: clamp(3.5rem, 8vw, 7.5rem); }
+h2 { font-size: clamp(2.25rem, 5vw, 4.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+/* ===========================
+   BODY TEXT
+=========================== */
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.8;
+  color: $text-muted;
+}
+
+/* ===========================
+   DISPLAY TEXT
+=========================== */
+
+.display {
+  font-family: $font-display;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: $bold;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+/* ===========================
+   GRADIENT HEADING
+=========================== */
+
+.gradient-text {
+  background: $gradient-text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================
+   SECTION LABEL / EYEBROW
+=========================== */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: $radius-round;
+  border: 1px solid $glass-border;
+  background: $glass-bg;
+  font-size: $text-xs;
+  font-weight: $semibold;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: $text-muted;
+  font-family: $font-body;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $primary;
+    box-shadow: 0 0 12px $primary;
+  }
+}
+
+/* ===========================
+   MONOSPACE
+=========================== */
+
+code, pre {
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* ===========================
+   LEAD TEXT
+=========================== */
+
+.lead {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.7;
+  color: $text-light;
+}
+
+/* ===========================
+   SMALL / CAPTION
+=========================== */
+
+.caption {
+  font-size: $text-sm;
+  color: $text-muted;
+  letter-spacing: 0.02em;
+}
