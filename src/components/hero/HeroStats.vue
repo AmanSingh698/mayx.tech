@@ -1,11 +1,6 @@
 <template>
   <div class="hero-stats" ref="statsEl">
-    <div
-      v-for="(stat, i) in stats"
-      :key="stat.label"
-      class="stat"
-      :ref="el => statEls[i] = el"
-    >
+    <div v-for="(stat, i) in stats" :key="stat.label" class="stat" :ref="el => statEls[i] = el">
       <div class="stat__number">
         <span class="stat__value" :ref="el => valueEls[i] = el">{{ stat.display }}</span>
         <span class="stat__suffix">{{ stat.suffix }}</span>
@@ -103,7 +98,7 @@ onMounted(() => {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     font-weight: 700;
-    color: $primary;
+    color: #FFDE17;
   }
 
   &__label {

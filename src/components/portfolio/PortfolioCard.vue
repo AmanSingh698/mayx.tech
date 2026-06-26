@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="portfolio-card"
-    :style="{ '--card-color': project.color }"
-    ref="cardEl"
-    @mousemove="onMove"
-    @mouseleave="onLeave"
-    data-cursor="view"
-  >
+  <div class="portfolio-card" :style="{ '--card-color': project.color }" ref="cardEl" @mousemove="onMove"
+    @mouseleave="onLeave" data-cursor="view">
     <!-- Background Image / Gradient -->
     <div class="portfolio-card__bg" :style="{ backgroundImage: `url(${project.image})` }">
       <div class="portfolio-card__gradient"></div>
@@ -29,7 +23,7 @@
       <button class="portfolio-card__cta">
         <span>View Project</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         </svg>
       </button>
     </div>
@@ -131,13 +125,13 @@ function onLeave() {
   &__category {
     padding: 6px 14px;
     border-radius: $radius-round;
-    background: rgba(255, 255, 255, 0.08);
+    background: #FFDE17;
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: $text-muted;
+    color: #000000;
     font-family: 'Inter', sans-serif;
   }
 
@@ -189,7 +183,7 @@ function onLeave() {
     gap: 10px;
     padding: 14px 28px;
     border-radius: $radius-round;
-    background: $white;
+    background: #FFDE17;
     color: #050505;
     font-size: 14px;
     font-weight: 700;
@@ -211,7 +205,7 @@ function onLeave() {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    color: rgba(255, 255, 255, 0.06);
+    color: #FFDE17;
     line-height: 1.1;
     z-index: 1;
     pointer-events: none;

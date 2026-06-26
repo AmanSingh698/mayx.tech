@@ -7,7 +7,7 @@
             <!-- Logo -->
             <RouterLink to="/" class="logo">
                 <span class="logo-icon"></span>
-                MAYX
+                U18
             </RouterLink>
 
             <!-- Desktop Menu -->
@@ -148,7 +148,7 @@ onUnmounted(() => {
     padding: 18px 0;
     backdrop-filter: blur(24px);
     background: rgba(5, 5, 5, 0.55);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.05); */
 }
 
 .container {
@@ -174,8 +174,8 @@ onUnmounted(() => {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #4f6ef7;
-    box-shadow: 0 0 20px #4f6ef7;
+    background: #FFDE17;
+    box-shadow: 0 0 20px #FFDE17;
 }
 
 .desktop-nav {

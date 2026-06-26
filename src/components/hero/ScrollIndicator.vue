@@ -60,7 +60,7 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 50%;
-    background: linear-gradient(180deg, $primary, $accent);
+    background: linear-gradient(180deg, #FFDE17, #FFDE17);
     border-radius: 999px;
     animation: scroll-line 2s ease-in-out infinite;
   }

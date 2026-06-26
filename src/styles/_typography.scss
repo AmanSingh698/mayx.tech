@@ -27,19 +27,36 @@ body {
    HEADINGS
 =========================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-display;
   font-weight: $bold;
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
-h1 { font-size: clamp(3.5rem, 8vw, 7.5rem); }
-h2 { font-size: clamp(2.25rem, 5vw, 4.5rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
-h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+}
+h2 {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+h4 {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1rem;
+}
 
 /* ===========================
    BODY TEXT
@@ -98,8 +115,8 @@ p {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: $primary;
-    box-shadow: 0 0 12px $primary;
+    background: #ffde17;
+    box-shadow: 0 0 12px #ffde17;
   }
 }
 
@@ -107,7 +124,8 @@ p {
    MONOSPACE
 =========================== */
 
-code, pre {
+code,
+pre {
   font-family: 'Fira Code', 'Cascadia Code', monospace;
 }
 

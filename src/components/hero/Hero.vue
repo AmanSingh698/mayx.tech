@@ -27,21 +27,13 @@
             AI systems that actually work in production.
           </p>
           <div class="hero__actions">
-            <button
-              class="hero-btn-primary"
-              @mousemove="magnetMove"
-              @mouseleave="magnetLeave"
-            >
+            <button class="hero-btn-primary" @mousemove="magnetMove" @mouseleave="magnetLeave">
               Start a Project
             </button>
-            <button
-              class="hero-btn-ghost"
-              @mousemove="magnetMove"
-              @mouseleave="magnetLeave"
-            >
+            <button class="hero-btn-ghost" @mousemove="magnetMove" @mouseleave="magnetLeave">
               See Our Work
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M2 7h10M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
               </svg>
             </button>
           </div>
@@ -115,12 +107,10 @@ onMounted(() => {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(
-    ellipse 80% 70% at 50% 50%,
-    rgba(5, 5, 5, 0.2) 0%,
-    rgba(5, 5, 5, 0.58) 60%,
-    rgba(5, 5, 5, 0.92) 100%
-  );
+  background: radial-gradient(ellipse 80% 70% at 50% 50%,
+      rgba(5, 5, 5, 0.2) 0%,
+      rgba(5, 5, 5, 0.58) 60%,
+      rgba(5, 5, 5, 0.92) 100%);
   pointer-events: none;
 }
 
@@ -189,7 +179,7 @@ onMounted(() => {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: $primary;
+  background: #FFDE17;
   flex-shrink: 0;
 }
 
@@ -199,12 +189,12 @@ onMounted(() => {
   font-weight: 700;
   line-height: 1.04;
   letter-spacing: -0.035em;
-  color: $white;
+  color: #FFDE17;
   margin: 0 0 clamp(14px, 2vw, 20px) 0;
 
   em {
     font-style: normal;
-    background: linear-gradient(90deg, #4f6ef7, #818cf8);
+    background: linear-gradient(90deg, #ffffff, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -233,7 +223,7 @@ onMounted(() => {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: $white;
+  background: #FFDE17;
   color: $background;
   border: none;
   border-radius: $radius-sm;
@@ -277,7 +267,9 @@ onMounted(() => {
     display: none;
   }
 
-  > * { width: 100%; }
+  >* {
+    width: 100%;
+  }
 }
 
 @media (max-width: $tablet) {
