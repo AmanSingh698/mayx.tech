@@ -37,14 +37,35 @@
    FLEX
 =========================== */
 
-.flex { display: flex; }
-.flex-center { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-col { display: flex; flex-direction: column; }
-.flex-wrap { flex-wrap: wrap; }
-.gap-4 { gap: $space-4; }
-.gap-6 { gap: $space-6; }
-.gap-8 { gap: $space-8; }
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-4 {
+  gap: $space-4;
+}
+.gap-6 {
+  gap: $space-6;
+}
+.gap-8 {
+  gap: $space-8;
+}
 
 /* ===========================
    GRID
@@ -108,8 +129,12 @@
    GLOW EFFECTS
 =========================== */
 
-.glow-primary { box-shadow: $shadow-blue; }
-.glow-purple { box-shadow: $shadow-purple; }
+.glow-primary {
+  box-shadow: $shadow-blue;
+}
+.glow-purple {
+  box-shadow: $shadow-purple;
+}
 
 .text-glow {
   text-shadow: 0 0 40px rgba($primary, 0.5);
@@ -128,7 +153,9 @@
    OVERFLOW HIDDEN CLIP
 =========================== */
 
-.overflow-hidden { overflow: hidden; }
+.overflow-hidden {
+  overflow: hidden;
+}
 
 /* ===========================
    VISIBILITY
@@ -184,10 +211,15 @@
     box-shadow: 0 0 40px rgba($primary, 0.4);
     color: white;
 
-    &::after { opacity: 1; }
+    &::after {
+      opacity: 1;
+    }
   }
 
-  span { position: relative; z-index: 1; }
+  span {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .btn-outline {
@@ -198,7 +230,7 @@
 
   &:hover {
     background: $glass-bg;
-    border-color: rgba(255,255,255,0.15);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -220,13 +252,23 @@
    TEXT ALIGN
 =========================== */
 
-.text-center { text-align: center; }
-.text-left { text-align: left; }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
 
 /* ===========================
    SPACING UTILITIES
 =========================== */
 
-.mt-auto { margin-top: auto; }
-.mb-6 { margin-bottom: $space-6; }
-.mb-8 { margin-bottom: $space-8; }
+.mt-auto {
+  margin-top: auto;
+}
+.mb-6 {
+  margin-bottom: $space-6;
+}
+.mb-8 {
+  margin-bottom: $space-8;
+}

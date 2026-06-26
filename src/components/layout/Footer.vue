@@ -17,15 +17,8 @@
             for the next generation of products.
           </p>
           <div class="footer__socials">
-            <a
-              v-for="social in socials"
-              :key="social.name"
-              :href="social.url"
-              :aria-label="social.name"
-              class="footer__social"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a v-for="social in socials" :key="social.name" :href="social.url" :aria-label="social.name"
+              class="footer__social" target="_blank" rel="noopener noreferrer">
               <span v-html="social.icon"></span>
             </a>
           </div>
@@ -187,7 +180,7 @@ onMounted(() => {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: $primary;
+    background: #FFDE17;
     box-shadow: 0 0 16px $primary;
     animation: pulse-glow 2.5s infinite;
   }
@@ -218,10 +211,15 @@ onMounted(() => {
     text-decoration: none;
     transition: all $normal $ease;
 
+    :deep(svg) {
+      color: currentColor;
+      fill: currentColor;
+    }
+
     &:hover {
-      background: rgba($primary, 0.1);
-      border-color: rgba($primary, 0.2);
-      color: $primary;
+      background: #FFDE17;
+      border-color: #FFDE17;
+      color: #000000;
       transform: translateY(-3px);
     }
   }
@@ -261,7 +259,7 @@ onMounted(() => {
       transform: translateX(-8px);
       transition: all $fast $ease;
       font-size: 12px;
-      color: $primary;
+      color: #FFDE17;
     }
 
     &:hover {
@@ -277,7 +275,7 @@ onMounted(() => {
 
   &__divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
     position: relative;
     z-index: 1;
   }
@@ -316,7 +314,9 @@ onMounted(() => {
     transition: color $fast $ease;
     font-family: 'Inter', sans-serif;
 
-    &:hover { color: $white; }
+    &:hover {
+      color: $white;
+    }
   }
 }
 </style>

@@ -9,9 +9,7 @@
                 <span class="logo-icon"></span>
                 U18
             </RouterLink>
-
             <!-- Desktop Menu -->
-
             <nav class="desktop-nav">
                 <RouterLink v-for="item in menu" :key="item.name" :to="item.link" class="nav-link">
                     {{ item.name }}
@@ -19,26 +17,20 @@
             </nav>
 
             <!-- Right -->
-
             <div class="right">
-                <div clss="status">
+                <!-- <div clss="status">
                     <span></span>
-
                     Available
-                </div>
-
+                </div> -->
                 <button class="project-btn" @mousemove="magneticMove" @mouseleave="resetButton">
                     Start Project
-
                     <i class="ri-arrow-right-up-line"></i>
                 </button>
             </div>
 
             <!-- Mobile -->
-
             <button class="hamburger" @click="mobileMenu = !mobileMenu">
                 <span></span>
-
                 <span></span>
             </button>
         </div>
@@ -50,7 +42,6 @@
                 <RouterLink v-for="item in menu" :key="item.name" :to="item.link" @click="mobileMenu = false">
                     {{ item.name }}
                 </RouterLink>
-
                 <button class="mobile-btn">Start Project</button>
             </div>
         </Transition>
@@ -233,7 +224,7 @@ onUnmounted(() => {
 }
 
 .project-btn {
-    padding: 16px 26px;
+    padding: 5px 5px;
     border: none;
     border-radius: 999px;
     background: white;

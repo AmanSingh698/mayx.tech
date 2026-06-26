@@ -77,6 +77,7 @@ onMounted(() => {
       '-=0.2'
     )
     // Chars exit
+    // comment the line from 81 to 98 if you don't want to continue to the application, exit the application on the loader page only
     .to(chars, {
       y: '-120%',
       opacity: 0,
@@ -166,14 +167,14 @@ onMounted(() => {
   &__bar-track {
     width: 100%;
     height: 2px;
-    background: rgba(255, 255, 255, 0.06);
+    background: #FFDE17;
     border-radius: 999px;
     overflow: hidden;
   }
 
   &__bar {
     height: 100%;
-    background: $gradient-primary;
+    background: linear-gradient(135deg, #6b6541 0%, #FFDE17 100%);
     border-radius: 999px;
     will-change: transform;
   }

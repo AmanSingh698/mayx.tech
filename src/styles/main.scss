@@ -31,9 +31,7 @@
 
 body {
   background: $background;
-
   color: $white;
-
   overflow-x: hidden;
 }
 
@@ -41,7 +39,6 @@ body {
 
 ::selection {
   background: $primary;
-
   color: white;
 }
 
@@ -49,7 +46,6 @@ body {
 
 a {
   color: inherit;
-
   text-decoration: none;
 }
 
@@ -57,7 +53,6 @@ a {
 
 img {
   display: block;
-
   max-width: 100%;
 }
 
@@ -65,7 +60,6 @@ img {
 
 button {
   font-family: inherit;
-
   cursor: pointer;
 }
 

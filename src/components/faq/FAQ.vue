@@ -184,8 +184,9 @@ onMounted(() => {
 
     &--open .faq__icon {
       transform: rotate(45deg);
-      background: $primary;
+      background: #FFDE17;
       border-color: $primary;
+      color: #000000;
     }
 
     &--open .faq__question {
@@ -227,6 +228,10 @@ onMounted(() => {
     flex-shrink: 0;
     transition: all $normal $ease;
     color: $text-muted;
+
+    svg {
+      color: inherit;
+    }
   }
 
   &__answer {

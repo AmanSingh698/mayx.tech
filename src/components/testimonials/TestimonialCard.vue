@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="testimonial-card"
-    ref="cardEl"
-    @mousemove="onMove"
-    @mouseleave="onLeave"
-  >
+  <div class="testimonial-card" ref="cardEl" @mousemove="onMove" @mouseleave="onLeave">
     <!-- Rating -->
     <div class="testimonial-card__rating">
       <span v-for="n in 5" :key="n" class="testimonial-card__star">★</span>
@@ -87,7 +82,7 @@ function onLeave() {
     display: flex;
     gap: 4px;
     font-size: 16px;
-    color: #f59e0b;
+    color: #FFDE17;
     letter-spacing: 2px;
   }
 
@@ -121,13 +116,13 @@ function onLeave() {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: $gradient-primary;
+    background: linear-gradient(135deg, #7d722e 0%, #FFDE17 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: 16px;
-    color: $white;
+    color: #000000;
     flex-shrink: 0;
     font-family: 'Space Grotesk', sans-serif;
   }
