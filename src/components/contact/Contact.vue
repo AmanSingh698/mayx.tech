@@ -40,23 +40,12 @@
             <div class="contact__form-row">
               <div class="contact__field">
                 <label for="contact-name">Name</label>
-                <input
-                  id="contact-name"
-                  v-model="form.name"
-                  type="text"
-                  placeholder="John Doe"
-                  autocomplete="name"
-                />
+                <input id="contact-name" v-model="form.name" type="text" placeholder="John Doe" autocomplete="name" />
               </div>
               <div class="contact__field">
                 <label for="contact-email">Email</label>
-                <input
-                  id="contact-email"
-                  v-model="form.email"
-                  type="email"
-                  placeholder="john@company.com"
-                  autocomplete="email"
-                />
+                <input id="contact-email" v-model="form.email" type="email" placeholder="john@company.com"
+                  autocomplete="email" />
               </div>
             </div>
 
@@ -86,22 +75,12 @@
 
             <div class="contact__field">
               <label for="contact-message">Tell us about your project</label>
-              <textarea
-                id="contact-message"
-                v-model="form.message"
-                rows="5"
-                placeholder="Describe your idea, goals, or challenges..."
-              ></textarea>
+              <textarea id="contact-message" v-model="form.message" rows="5"
+                placeholder="Describe your idea, goals, or challenges..."></textarea>
             </div>
 
-            <button
-              type="submit"
-              class="contact__submit"
-              ref="submitBtn"
-              @mousemove="onBtnMove"
-              @mouseleave="onBtnLeave"
-              :disabled="submitted"
-            >
+            <button type="submit" class="contact__submit" ref="submitBtn" @mousemove="onBtnMove"
+              @mouseleave="onBtnLeave" :disabled="submitted">
               <span v-if="!submitted">Send Message →</span>
               <span v-else>✓ Message Sent!</span>
             </button>
@@ -348,10 +327,10 @@ onMounted(() => {
   &__submit {
     padding: 18px;
     border-radius: $radius-round;
-    background: $gradient-primary;
-    color: $white;
+    background: linear-gradient(135deg, #b1a13f 0%, #FFDE17 100%);
+    color: #000000;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     border: none;
     cursor: pointer;
     transition: box-shadow $normal $ease, opacity $normal $ease;

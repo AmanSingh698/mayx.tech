@@ -23,12 +23,8 @@
 
         <!-- Right: Features -->
         <div class="whyus__right" ref="rightEl">
-          <div
-            class="whyus__feature"
-            v-for="(feature, i) in features"
-            :key="feature.title"
-            :ref="el => featureEls[i] = el"
-          >
+          <div class="whyus__feature" v-for="(feature, i) in features" :key="feature.title"
+            :ref="el => featureEls[i] = el">
             <div class="whyus__feature-icon">{{ feature.icon }}</div>
             <div class="whyus__feature-text">
               <h4>{{ feature.title }}</h4>
@@ -181,7 +177,7 @@ onMounted(() => {
     padding: 28px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-    &:first-child { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    // &:first-child { border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
     &-icon {
       font-size: 1.5rem;

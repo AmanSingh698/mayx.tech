@@ -13,13 +13,8 @@
     <!-- Pinned scroll container -->
     <div class="portfolio__pin-wrap" ref="pinWrap">
       <div class="portfolio__stack" ref="stackEl">
-        <div
-          v-for="(project, i) in projects"
-          :key="project.title"
-          class="portfolio__slide"
-          :ref="el => slideEls[i] = el"
-          :style="{ zIndex: i }"
-        >
+        <div v-for="(project, i) in projects" :key="project.title" class="portfolio__slide"
+          :ref="el => slideEls[i] = el" :style="{ zIndex: i }">
           <PortfolioCard :project="project" :index="i" />
         </div>
       </div>
@@ -124,7 +119,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: pinWrap.value,
       pin: true,
-      start: 'top top',
+      start: 'top 100px',
       end: `+=${(projects.length - 1) * 100}%`,
       scrub: 1,
       onUpdate(self) {
@@ -212,10 +207,10 @@ onUnmounted(() => {
   }
 
   &__pin-wrap {
-    height: 100vh;
+    height: calc(100vh - 140px);
     position: relative;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 24px;
     border-radius: $radius-xl;
   }
 
@@ -226,8 +221,8 @@ onUnmounted(() => {
 
   &__slide {
     position: absolute;
-    top: clamp(90px, 12vh, 130px);
-    bottom: clamp(20px, 3vh, 40px);
+    top: 20px;
+    bottom: 20px;
     left: clamp(24px, 6vw, 80px);
     right: clamp(24px, 6vw, 80px);
     will-change: transform, opacity;
@@ -266,7 +261,7 @@ onUnmounted(() => {
 
   &__progress-bar {
     height: 100%;
-    background: $gradient-primary;
+    background: linear-gradient(135deg, #797246 0%, #FFDE17 100%);
     transform-origin: left;
     will-change: transform;
     border-radius: 999px;

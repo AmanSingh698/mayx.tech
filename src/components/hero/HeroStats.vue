@@ -73,7 +73,7 @@ onMounted(() => {
   z-index: 2;
   margin-top: clamp(40px, 6vw, 64px);
   padding-top: clamp(28px, 4vw, 40px);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  // border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .stat {

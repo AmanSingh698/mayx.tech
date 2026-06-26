@@ -13,24 +13,12 @@
         <!-- Render brands list twice to make it seamless -->
         <div class="trusted__logos">
           <div v-for="(brand, i) in brands" :key="`${brand.name}-${i}`" class="trusted__logo">
-            <img
-              :src="brand.logo"
-              :alt="brand.name"
-              loading="lazy"
-              width="120"
-              height="40"
-            />
+            <img :src="brand.logo" :alt="brand.name" loading="lazy" width="120" height="40" />
           </div>
         </div>
         <div class="trusted__logos" aria-hidden="true">
           <div v-for="(brand, i) in brands" :key="`${brand.name}-clone-${i}`" class="trusted__logo">
-            <img
-              :src="brand.logo"
-              :alt="brand.name"
-              loading="lazy"
-              width="120"
-              height="40"
-            />
+            <img :src="brand.logo" :alt="brand.name" loading="lazy" width="120" height="40" />
           </div>
         </div>
       </div>
@@ -108,7 +96,8 @@ const brands = [
     display: flex;
     align-items: center;
     gap: 72px;
-    padding-right: 72px; /* Matches the gap for perfect spacing between loops */
+    padding-right: 72px;
+    /* Matches the gap for perfect spacing between loops */
   }
 
   &__logo {
@@ -126,7 +115,7 @@ const brands = [
     }
 
     img {
-      height: 28px;
+      height: 80px;
       width: auto;
       object-fit: contain;
     }
@@ -137,6 +126,7 @@ const brands = [
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }

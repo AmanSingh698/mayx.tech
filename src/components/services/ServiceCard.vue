@@ -19,7 +19,7 @@
         </div>
         <div class="service-card__arrow">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
           </svg>
         </div>
       </div>
@@ -205,9 +205,9 @@ function onLeave() {
   }
 
   &__inner:hover &__arrow {
-    background: $primary;
-    border-color: $primary;
-    color: $white;
+    background: #FFDE17;
+    border-color: #FFDE17;
+    color: #000000;
     transform: rotate(-45deg);
   }
 }

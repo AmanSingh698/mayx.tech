@@ -17,18 +17,13 @@
 
         <!-- Items -->
         <div class="faq__list" ref="listEl">
-          <div
-            v-for="(item, i) in faqs"
-            :key="i"
-            class="faq__item"
-            :class="{ 'faq__item--open': openIndex === i }"
-            :ref="el => itemEls[i] = el"
-          >
+          <div v-for="(item, i) in faqs" :key="i" class="faq__item" :class="{ 'faq__item--open': openIndex === i }"
+            :ref="el => itemEls[i] = el">
             <button class="faq__question" @click="toggle(i)" :id="`faq-btn-${i}`">
               <span>{{ item.question }}</span>
               <div class="faq__icon">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </div>
             </button>
@@ -183,9 +178,9 @@ onMounted(() => {
   &__item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-    &:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
+    // &:first-child {
+    //   border-top: 1px solid rgba(255, 255, 255, 0.06);
+    // }
 
     &--open .faq__icon {
       transform: rotate(45deg);
