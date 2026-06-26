@@ -3,17 +3,30 @@
         scrolled: isScrolled,
         open: mobileMenu,
     }">
+        <!-- Mobile Menu Backdrop -->
+        <Transition name="fade">
+            <div v-if="mobileMenu" class="backdrop" @click="mobileMenu = false"></div>
+        </Transition>
+
         <div class="container">
+            <!-- Mobile Hamburger -->
+            <button class="hamburger" @click="mobileMenu = !mobileMenu">
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Logo -->
             <RouterLink to="/" class="logo">
                 <span class="logo-icon"></span>
                 U18
             </RouterLink>
+
             <!-- Desktop Menu -->
             <nav class="desktop-nav">
-                <RouterLink v-for="item in menu" :key="item.name" :to="item.link" class="nav-link">
+                <a v-for="item in menu" :key="item.name" :href="item.link" @click.prevent="navigate(item)"
+                    class="nav-link">
                     {{ item.name }}
-                </RouterLink>
+                </a>
             </nav>
 
             <!-- Right -->
@@ -22,65 +35,74 @@
                     <span></span>
                     Available
                 </div> -->
-                <button class="project-btn" @mousemove="magneticMove" @mouseleave="resetButton">
+                <button class="project-btn" @click="navigate({ link: '#contact' })" @mousemove="magneticMove"
+                    @mouseleave="resetButton">
                     Start Project
                     <i class="ri-arrow-right-up-line"></i>
                 </button>
             </div>
-
-            <!-- Mobile -->
-            <button class="hamburger" @click="mobileMenu = !mobileMenu">
-                <span></span>
-                <span></span>
-            </button>
         </div>
 
-        <!-- Mobile Menu -->
-
-        <Transition name="menu">
+        <!-- Mobile Menu Drawer -->
+        <Transition name="drawer">
             <div v-if="mobileMenu" class="mobile-nav">
-                <RouterLink v-for="item in menu" :key="item.name" :to="item.link" @click="mobileMenu = false">
+                <a v-for="item in menu" :key="item.name" :href="item.link" @click.prevent="navigate(item)">
                     {{ item.name }}
-                </RouterLink>
-                <button class="mobile-btn">Start Project</button>
+                </a>
+                <button class="mobile-btn" @click="navigate({ link: '#contact' })">Start Project</button>
             </div>
         </Transition>
     </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import gsap from 'gsap'
+import { useLenis } from '@/composables/useLenis'
 
 const mobileMenu = ref(false)
 const isScrolled = ref(false)
+const { scrollTo } = useLenis()
+
+watch(mobileMenu, (isOpen) => {
+    if (isOpen) {
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = ''
+    }
+})
 
 const menu = [
     {
         name: 'Home',
-        link: '/',
+        link: '#hero',
     },
 
     {
         name: 'Services',
-        link: '/',
+        link: '#services',
     },
 
     {
         name: 'Work',
-        link: '/',
+        link: '#portfolio',
     },
 
     {
         name: 'Process',
-        link: '/',
+        link: '#process',
     },
 
     {
         name: 'Contact',
-        link: '/',
+        link: '#contact',
     },
 ]
+
+const navigate = (item) => {
+    mobileMenu.value = false
+    scrollTo(item.link)
+}
 
 const onScroll = () => {
     isScrolled.value = window.scrollY > 30
@@ -121,6 +143,7 @@ onMounted(() => {
 
 onUnmounted(() => {
     window.removeEventListener('scroll', onScroll)
+    document.body.style.overflow = ''
 })
 </script>
 
@@ -148,6 +171,8 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1001;
 }
 
 .logo {
@@ -248,20 +273,52 @@ onUnmounted(() => {
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
+    z-index: 1002;
+    padding: 10px;
+    margin: -10px;
+    position: relative;
 }
 
 .hamburger span {
     width: 28px;
     height: 2px;
     background: white;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.navbar.open .hamburger span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.navbar.open .hamburger span:nth-child(2) {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 999;
 }
 
 .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(300px, 80vw);
+    height: 100vh;
+    background: #090909;
     display: flex;
     flex-direction: column;
-    padding: 35px;
-    background: #090909;
+    padding: 110px 30px 40px 30px;
     gap: 24px;
+    z-index: 1000;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mobile-nav a {
@@ -272,23 +329,34 @@ onUnmounted(() => {
 
 .mobile-btn {
     margin-top: 20px;
-    padding: 18px;
+    padding: 5px;
     border: none;
     border-radius: 999px;
-    background: #4f6ef7;
-    color: white;
+    background: #FFDE17;
+    color: #000000;
     font-weight: 700;
 }
 
-.menu-enter-active,
-.menu-leave-active {
-    transition: 0.35s;
+/* Fade Transition */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.35s ease;
 }
 
-.menu-enter-from,
-.menu-leave-to {
+.fade-enter-from,
+.fade-leave-to {
     opacity: 0;
-    transform: translateY(-20px);
+}
+
+/* Drawer Transition */
+.drawer-enter-active,
+.drawer-leave-active {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+    transform: translateX(-100%);
 }
 
 @media (max-width: 980px) {

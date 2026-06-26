@@ -185,7 +185,7 @@ onMounted(() => {
     &--open .faq__icon {
       transform: rotate(45deg);
       background: #FFDE17;
-      border-color: $primary;
+      border-color: #FFDE17;
       color: #000000;
     }
 

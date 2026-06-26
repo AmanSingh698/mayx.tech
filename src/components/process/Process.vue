@@ -13,13 +13,8 @@
     <!-- Pinned horizontal scroll -->
     <div class="process__outer" ref="outerEl">
       <div class="process__inner" ref="innerEl">
-        <div
-          v-for="(step, i) in steps"
-          :key="step.title"
-          class="process__step"
-          :class="{ 'process__step--active': activeStep === i }"
-          :ref="el => stepEls[i] = el"
-        >
+        <div v-for="(step, i) in steps" :key="step.title" class="process__step"
+          :class="{ 'process__step--active': activeStep === i }" :ref="el => stepEls[i] = el">
           <div class="process__step-number">{{ String(i + 1).padStart(2, '0') }}</div>
           <div class="process__step-icon">{{ step.icon }}</div>
           <h3 class="process__step-title">{{ step.title }}</h3>
@@ -28,7 +23,7 @@
           <div class="process__step-connector" v-if="i < steps.length - 1">
             <div class="process__step-line"></div>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 10h8M11 7l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M6 10h8M11 7l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
             </svg>
           </div>
         </div>
@@ -179,7 +174,7 @@ onUnmounted(() => {
       font-size: 4rem;
       font-weight: 700;
       letter-spacing: -0.04em;
-      color: rgba(255, 255, 255, 0.04);
+      color: #FFDE17;
       line-height: 1;
       margin-bottom: 16px;
     }
